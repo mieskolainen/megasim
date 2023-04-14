@@ -7,6 +7,7 @@ m.mieskolainen@imperial.ac.uk, 2023 </br>
 
 ### Conda environment
 
+(If you like)
 ```
 wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
 ```
@@ -25,6 +26,13 @@ Override system default compiler
 ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc ~/.local/bin/gcc
 ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-g++ ~/.local/bin/g++
 export PATH=$HOME/.local/bin:$PATH
+```
+
+## CVMFS environment at lxplus / lx
+
+(We need C++14 compatible g++, the environment below might work)
+```
+source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_98python3 x86_64-centos7-gcc9-opt
 ```
 
 ## Installation
