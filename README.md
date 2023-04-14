@@ -74,7 +74,7 @@ cd ../..
 wget https://pythia.org/download/pythia83/pythia8309.tgz
 
 tar -xzvf pythia8309.tgz
-cd pythia8309
+cd
 
 export PYTHIA8=$HOME/local/PYTHIA8
 ./configure --with-hepmc2=$HEPMC2/HepMC-2.06.11/build --prefix=$PYTHIA8/Pythia-8.3.09/build
