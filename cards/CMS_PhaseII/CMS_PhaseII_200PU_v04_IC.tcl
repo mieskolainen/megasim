@@ -1,7 +1,7 @@
 ########################################
 #  
 #  Extended: Mikael Mieskolainen (Imperial College)
-#            14/04/2023
+#            14/04/2023 (Validation not done -- work in progress)
 #  
 #  Original card:
 #  
