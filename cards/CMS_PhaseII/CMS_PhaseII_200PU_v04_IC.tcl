@@ -4946,7 +4946,7 @@ module StatusPidFilter GenParticleFilter {
 module TreeWriter TreeWriter {
 
   # add Branch InputArray BranchName BranchClass
-
+  
   # GEN-FILTER
   add Branch GenParticleFilter/filteredParticles Particle GenParticle
 
@@ -4954,14 +4954,13 @@ module TreeWriter TreeWriter {
   add Branch PileUpMerger/stableParticles Particle GenParticle
   add Branch PileUpMerger/vertices Vertex Vertex
   add Branch PileUpMerger/vertices GenVertex Vertex
-  
+
   # TRACKS  
   add Branch TrackMerger/tracks Track Track
 
   # JETS
   add Branch GenJetFinder/jets GenJet Jet
   add Branch GenJetFinderAK8/jetsAK8 GenJetAK8 Jet
-  add Branch GenMissingET/momentum GenMissingET MissingET
   
   # CALO-FLOW
 #  add Branch HCal/eflowTracks EFlowTrack Track
@@ -4993,6 +4992,7 @@ module TreeWriter TreeWriter {
   add Branch Rho/rho Rho Rho
 
   # MISSING ET
+  add Branch GenMissingET/momentum GenMissingET MissingET
   add Branch MissingET/momentum MissingET MissingET
   add Branch PuppiMissingET/momentum PuppiMissingET MissingET
   add Branch GenPileUpMissingET/momentum GenPileUpMissingET MissingET
