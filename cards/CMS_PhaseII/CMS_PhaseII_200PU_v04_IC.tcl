@@ -5051,10 +5051,10 @@ module TreeWriter TreeWriter {
 
   add Branch PileUpMerger/stableParticles GenParticle GenParticle
   add Branch PileUpMerger/vertices GenVertex Vertex
-
+  
   # RECO VERTEX
-  add Branch VertexFinderDA4D/vertices Vertex4D Vertex
-  add Branch VertexFinder/vertices Vertex Vertex
+  # add Branch VertexFinderDA4D/vertices Vertex4D Vertex
+  # add Branch VertexFinder/vertices Vertex Vertex
 
   # TRACKS  
   add Branch TrackMerger/tracks Track Track
