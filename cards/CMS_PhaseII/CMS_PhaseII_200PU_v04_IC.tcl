@@ -1,9 +1,14 @@
 ########################################
-#
+#  
+#  Modified: Mikael Mieskolainen (Imperial College)
+#            14/04/2023
+#  
+#  Original card:
+#  
 #  Main authors: Michele Selvaggi (CERN)
-#
+#  
 #  Released on: May 2018
-#
+#  
 #  Version: v04
 #
 #
@@ -4941,18 +4946,19 @@ module StatusPidFilter GenParticleFilter {
 
 module TreeWriter TreeWriter {
 
+  # add Branch InputArray BranchName BranchClass
 
-
-# add Branch InputArray BranchName BranchClass
   add Branch GenParticleFilter/filteredParticles Particle GenParticle
-  #add Branch Delphes/allParticles Particle GenParticle
+  
   add Branch PileUpMerger/vertices Vertex Vertex
   add Branch PileUpMerger/vertices GenVertex Vertex
   
+  add Branch TrackMerger/tracks Track Track
+
   add Branch GenJetFinder/jets GenJet Jet
   add Branch GenJetFinderAK8/jetsAK8 GenJetAK8 Jet
   add Branch GenMissingET/momentum GenMissingET MissingET
-
+  
 #  add Branch HCal/eflowTracks EFlowTrack Track
 #  add Branch ECal/eflowPhotons EFlowPhoton Tower
 #  add Branch HCal/eflowNeutralHadrons EFlowNeutralHadron Tower

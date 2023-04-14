@@ -15,7 +15,7 @@ cd Delphes-3.5.0
 # Simulate the process with pile-up included
 # [DelphesHepMC2 tcl-card root-output hepmc2-input]
 
-TCL=CMS_PhaseII_200PU_v04_new
+TCL=CMS_PhaseII_200PU_v04_IC
 
 for PROC in hardQCD ttbar Ztoee Ztomumu Ztoqqbar
 do
