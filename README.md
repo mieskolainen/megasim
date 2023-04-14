@@ -5,11 +5,22 @@ m.mieskolainen@imperial.ac.uk, 2023 </br>
 
 ## Preliminaries
 
-### CMake
+### Conda environment
 
-(If not already)
 ```
-sudo apt install cmake
+wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
+```
+Then execute the installer with bash `filename.sh`.
+
+```
+conda create -y --name megasim python==3.10.10
+
+conda install -c anaconda cmake
+conda install gcc_linux-64=9.3.0
+conda install gxx_linux-64=9.3.0
+
+ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc $CONDA_PREFIX/bin/gcc
+ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-g++ $CONDA_PREFIX/bin/g++
 ```
 
 ## Installation
