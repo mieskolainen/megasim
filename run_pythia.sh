@@ -13,7 +13,7 @@ cd src
 source compile.sh
 chmod +x p8gen
 
-NEVENTS=1000
+NEVENTS=100
 
 # Simulate
 for PROC in MinBias hardQCD ttbar Ztoee Ztomumu Ztoqqbar

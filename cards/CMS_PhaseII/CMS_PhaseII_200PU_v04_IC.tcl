@@ -4949,8 +4949,8 @@ module TreeWriter TreeWriter {
 
   # GENERATOR PARTICLES
   # add Branch GenParticleFilter/filteredParticles Particle GenParticle
-  # add Branch Delphes/allParticles Particle GenParticle
-
+  add Branch Delphes/allParticles Particle GenParticle
+  
   # PILE-UP
   add Branch PileUpMerger/stableParticles Particle GenParticle
   add Branch PileUpMerger/vertices GenVertex Vertex
