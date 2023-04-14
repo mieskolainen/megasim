@@ -1,12 +1,11 @@
-# megasim: Pythia to HepMC to Delphes HEP simulation chain
+# megasim
+## Pythia to HepMC to Delphes HEP-simulation chain
 
-m.mieskolainen@imperial.ac.uk, 2023
-
-</br>
+m.mieskolainen@imperial.ac.uk, 2023 </br>
 
 ## Preliminaries
 
-# CMake
+### CMake
 
 (If not already)
 ```
@@ -41,8 +40,9 @@ make -j4
 make install
 ```
 
-### RIVET (RESERVATION; not needed)
-# https://gitlab.com/hepcedar/rivet/-/blob/release-3-1-x/doc/tutorials/installation.md
+### RIVET
+(RESERVATION -- not needed) </br>
+https://gitlab.com/hepcedar/rivet/-/blob/release-3-1-x/doc/tutorials/installation.md
 ```
 export RIVET=$HOME/local/RIVET
 
@@ -78,7 +78,7 @@ make -j4
 
 ## Simulation
 
-### A. Event generator
+### A. Event generation
 
 ```
 source run_pythia.sh
@@ -92,9 +92,9 @@ source run_delphes.sh
 
 ## Links and others
 
-https://pythia.org/latest-manual/Welcome.html
-https://cp3.irmp.ucl.ac.be/projects/delphes 
-https://github.com/scikit-hep/pyhepmc
-https://gitlab.cern.ch/hepmc/HepMC3
+https://pythia.org/latest-manual/Welcome.html </br>
+https://cp3.irmp.ucl.ac.be/projects/delphes  </br>
+https://github.com/scikit-hep/pyhepmc </br>
+https://gitlab.cern.ch/hepmc/HepMC3 </br>
 
 See Delphes analysis ROOT-macro examples under `Delphes-3.5.0/examples`
