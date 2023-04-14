@@ -4946,7 +4946,7 @@ module StatusPidFilter GenParticleFilter {
 module TreeWriter TreeWriter {
 
   # add Branch InputArray BranchName BranchClass
-  
+
   # GEN-FILTER
   add Branch GenParticleFilter/filteredParticles Particle GenParticle
 
@@ -4967,11 +4967,11 @@ module TreeWriter TreeWriter {
 #  add Branch ECal/eflowPhotons EFlowPhoton Tower
 #  add Branch HCal/eflowNeutralHadrons EFlowNeutralHadron Tower
 
-  # PHOTONS
+  # PHOTON ID
   add Branch PhotonLooseID/photons PhotonLoose Photon
   add Branch PhotonTightID/photons PhotonTight Photon
 
-  # E/MU EFFICIENCIES
+  # E/MU ID
   add Branch ElectronEfficiency/electrons Electron Electron
   add Branch MuonLooseIdEfficiency/muons MuonLoose Muon
   add Branch MuonTightIdEfficiency/muons MuonTight Muon
@@ -4988,9 +4988,9 @@ module TreeWriter TreeWriter {
   add Branch JetEnergyScaleAK8/jets JetAK8 Jet
   add Branch JetEnergyScalePUPPIAK8/jets JetPUPPIAK8 Jet
 
-  # JET AREA
+  # AREA DENSITY
   add Branch Rho/rho Rho Rho
-
+  
   # MISSING ET
   add Branch GenMissingET/momentum GenMissingET MissingET
   add Branch MissingET/momentum MissingET MissingET
