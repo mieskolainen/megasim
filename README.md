@@ -30,50 +30,53 @@ source $HOME/local/root/bin/thisroot.sh
 
 ### HepMC2
 ```
-export HEPMC2=$HOME/local/HEPMC2
-
 tar -xvf hepmc2.06.11.tgz
 cd HepMC-2.06.11
 
+export HEPMC2=$HOME/local/HEPMC2
 ./configure --with-momentum=GEV --with-length=MM --prefix=$HEPMC2/HepMC-2.06.11/build
-make -j4
+make -j8
 make install
+cd ..
 ```
 
 ### Rivet
 (RESERVATION -- not needed) </br>
 https://gitlab.com/hepcedar/rivet/-/blob/release-3-1-x/doc/tutorials/installation.md
 ```
-export RIVET=$HOME/local/RIVET
-
 mkdir -p scratch/rivet
 cd scratch/rivet
 wget https://gitlab.com/hepcedar/rivetbootstrap/raw/3.1.7/rivet-bootstrap
 chmod +x rivet-bootstrap
 
-INSTALL_PREFIX=$RIVET MAKE="make -j4" ./rivet-bootstrap
+export RIVET=$HOME/local/RIVET
+INSTALL_PREFIX=$RIVET MAKE="make -j8" ./rivet-bootstrap
+cd ../..
 ```
 
 ### Pythia 8
 ```
-export PYTHIA8=$HOME/local/PYTHIA8
-
 wget https://pythia.org/download/pythia83/pythia8309.tgz
+
 tar -xzvf pythia8309.tgz
 cd pythia8309
 
+export PYTHIA8=$HOME/local/PYTHIA8
 ./configure --with-hepmc2=$HEPMC2/HepMC-2.06.11/build --prefix=$PYTHIA8/Pythia-8.3.09/build
-make -j4
+make -j8
 make install
+cd ..
 ```
 
 ### Delphes 3
 ```
 wget http://cp3.irmp.ucl.ac.be/downloads/Delphes-3.5.0.tar.gz
+
 tar -zxf Delphes-3.5.0.tar.gz
 cd Delphes-3.5.0
 
-make -j4
+make -j8
+cd ..
 ```
 
 ## Simulation

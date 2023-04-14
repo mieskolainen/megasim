@@ -3,3 +3,8 @@
 *.hepmc2
 *.hepmc3
 *.pileup
+
+
+/HepMC-2.06.11
+/pythia8309
+/Delphes-3.5.0
