@@ -41,8 +41,8 @@ set ExecutionPath {
   TimeSmearing
 
   VertexFinder
-  VertexFinderDA4D
-  
+  #VertexFinderDA4D
+
   ECal
   HCal
 
@@ -5060,8 +5060,8 @@ module TreeWriter TreeWriter {
 
   # RECO VERTEX
   # add Branch VertexFinderDA4D/vertices Vertex4D Vertex
-  # add Branch VertexFinder/vertices Vertex Vertex
-
+  add Branch VertexFinder/vertices Vertex Vertex
+  
   # TRACKS  
   add Branch TrackMerger/tracks Track Track
 
