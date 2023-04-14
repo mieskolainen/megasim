@@ -13,14 +13,18 @@ wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
 Then execute the installer with bash `filename.sh`.
 
 ```
-conda create -y --name megasim python==3.9
+conda create -y --name megasim python==3.10.10
 conda activate megasim
 
 conda install -c anaconda cmake
 conda install -c conda-forge gxx_linux-64==11.1.0
+```
 
-ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc $CONDA_PREFIX/bin/gcc
-ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-g++ $CONDA_PREFIX/bin/g++
+Override system default compiler
+```
+ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-gcc ~/.local/bin/gcc
+ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-g++ ~/.local/bin/g++
+export PATH=$HOME/.local/bin:$PATH
 ```
 
 ## Installation
