@@ -5055,16 +5055,16 @@ module TreeWriter TreeWriter {
   # add Branch GenParticleFilter/filteredParticles Particle GenParticle
   # add Branch Delphes/allParticles Particle GenParticle
 
-  add Branch PileUpMerger/stableParticles GenParticle GenParticle
+  add Branch ParticlePropagator/stableParticles GenParticle GenParticle
   add Branch PileUpMerger/vertices GenVertex Vertex
-
+  
   # RECO VERTEX
   # add Branch VertexFinderDA4D/vertices Vertex4D Vertex
   # add Branch VertexFinder/vertices Vertex Vertex
 
   # TRACKS  
   add Branch TrackMerger/tracks Track Track
-  
+
   # JETS
   add Branch GenJetFinder/jets GenJet Jet
   add Branch GenJetFinderAK8/jetsAK8 GenJetAK8 Jet
