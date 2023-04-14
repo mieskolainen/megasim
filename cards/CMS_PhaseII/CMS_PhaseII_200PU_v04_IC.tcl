@@ -35,7 +35,6 @@ set ExecutionPath {
   MuonMomentumSmearing
 
   TrackMerger
-
   ECal
   HCal
 
@@ -771,7 +770,7 @@ module Merger TowerMerger {
 }
 
 ####################
-# Neutral eflow erger
+# Neutral eflow merger
 ####################
 
 module Merger NeutralEFlowMerger {
@@ -4948,40 +4947,52 @@ module TreeWriter TreeWriter {
 
   # add Branch InputArray BranchName BranchClass
 
+  # GEN-FILTER
   add Branch GenParticleFilter/filteredParticles Particle GenParticle
-  
+
+  # PILE-UP
+  add Branch PileUpMerger/stableParticles Particle GenParticle
   add Branch PileUpMerger/vertices Vertex Vertex
   add Branch PileUpMerger/vertices GenVertex Vertex
   
+  # TRACKS  
   add Branch TrackMerger/tracks Track Track
 
+  # JETS
   add Branch GenJetFinder/jets GenJet Jet
   add Branch GenJetFinderAK8/jetsAK8 GenJetAK8 Jet
   add Branch GenMissingET/momentum GenMissingET MissingET
   
+  # CALO-FLOW
 #  add Branch HCal/eflowTracks EFlowTrack Track
 #  add Branch ECal/eflowPhotons EFlowPhoton Tower
 #  add Branch HCal/eflowNeutralHadrons EFlowNeutralHadron Tower
 
+  # PHOTONS
   add Branch PhotonLooseID/photons PhotonLoose Photon
   add Branch PhotonTightID/photons PhotonTight Photon
 
+  # E/MU EFFICIENCIES
   add Branch ElectronEfficiency/electrons Electron Electron
   add Branch MuonLooseIdEfficiency/muons MuonLoose Muon
   add Branch MuonTightIdEfficiency/muons MuonTight Muon
 
+  # CHARGED-HADRON SUBTRACTION
 #  add Branch PhotonEfficiencyCHS/photons PhotonCHS Photon
   add Branch ElectronEfficiencyCHS/electrons ElectronCHS Electron
   add Branch MuonLooseIdEfficiencyCHS/muons MuonLooseCHS Muon
   add Branch MuonTightIdEfficiencyCHS/muons MuonTightCHS Muon
 
+  # JET ENERGY SCALE
   add Branch JetEnergyScale/jets Jet Jet
   add Branch JetEnergyScalePUPPI/jets JetPUPPI Jet
   add Branch JetEnergyScaleAK8/jets JetAK8 Jet
   add Branch JetEnergyScalePUPPIAK8/jets JetPUPPIAK8 Jet
 
+  # JET AREA
   add Branch Rho/rho Rho Rho
 
+  # MISSING ET
   add Branch MissingET/momentum MissingET MissingET
   add Branch PuppiMissingET/momentum PuppiMissingET MissingET
   add Branch GenPileUpMissingET/momentum GenPileUpMissingET MissingET
