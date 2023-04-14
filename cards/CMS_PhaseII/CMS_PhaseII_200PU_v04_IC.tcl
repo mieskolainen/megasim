@@ -159,7 +159,7 @@ module PileUpMerger PileUpMerger {
 
   # pre-generated minbias input file
   #set PileUpFile /eos/cms/store/group/upgrade/delphes/PhaseII/MinBias_100k.pileup
-  set PileUpFile MinBias.pileup
+  set PileUpFile ../output/MinBias.pileup
   
   # average expected pile up
   set MeanPileUp 200

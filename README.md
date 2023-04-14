@@ -112,6 +112,7 @@ source run_delphes.sh
 
 https://pythia.org/latest-manual/Welcome.html </br>
 https://cp3.irmp.ucl.ac.be/projects/delphes  </br>
+http://cp3.irmp.ucl.ac.be/downloads/RootTreeDescription.html </br>
 https://github.com/scikit-hep/pyhepmc </br>
 https://gitlab.cern.ch/hepmc/HepMC3 </br>
 
