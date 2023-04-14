@@ -4947,9 +4947,10 @@ module TreeWriter TreeWriter {
 
   # add Branch InputArray BranchName BranchClass
 
-  # GEN-FILTER
-  add Branch GenParticleFilter/filteredParticles Particle GenParticle
-
+  # GEN-PARTICLES
+  # add Branch GenParticleFilter/filteredParticles Particle GenParticle
+  # add Branch Delphes/allParticles Particle GenParticle
+  
   # PILE-UP
   add Branch PileUpMerger/stableParticles Particle GenParticle
   add Branch PileUpMerger/vertices Vertex Vertex
@@ -4990,7 +4991,7 @@ module TreeWriter TreeWriter {
 
   # AREA DENSITY
   add Branch Rho/rho Rho Rho
-  
+
   # MISSING ET
   add Branch GenMissingET/momentum GenMissingET MissingET
   add Branch MissingET/momentum MissingET MissingET
