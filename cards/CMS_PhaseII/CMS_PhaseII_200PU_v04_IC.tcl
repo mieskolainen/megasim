@@ -4962,7 +4962,7 @@ module TrackSmearing TrackSmearing {
   set ApplyToPileUp true
 
   # from http://mersi.web.cern.ch/mersi/layouts/.private/Baseline_tilted_200_Pixel_1_1_1/index.html
-  source trackResolution.tcl
+  source trackMomentumResolution.tcl
 }
 
 
