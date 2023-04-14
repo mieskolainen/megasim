@@ -11,6 +11,7 @@ cd src
 
 # Compile
 source compile.sh
+chmod +x p8gen
 
 NEVENTS=100000
 
