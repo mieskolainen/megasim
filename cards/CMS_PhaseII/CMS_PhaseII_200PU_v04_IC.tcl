@@ -5052,9 +5052,9 @@ module TreeWriter TreeWriter {
   # add Branch InputArray BranchName BranchClass
 
   # GENERATOR PARTICLES AND VERTICES
-  # add Branch GenParticleFilter/filteredParticles Particle GenParticle
-  # add Branch Delphes/allParticles Particle GenParticle
-
+  # add Branch GenParticleFilter/filteredParticles GenParticle GenParticle
+  # add Branch Delphes/allParticles GenParticle GenParticle
+  
   add Branch ParticlePropagator/stableParticles GenParticle GenParticle
   add Branch PileUpMerger/vertices GenVertex Vertex
   
