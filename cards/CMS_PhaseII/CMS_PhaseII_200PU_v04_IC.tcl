@@ -1,6 +1,6 @@
 ########################################
 #  
-#  Modified: Mikael Mieskolainen (Imperial College)
+#  Extended: Mikael Mieskolainen (Imperial College)
 #            14/04/2023
 #  
 #  Original card:
@@ -17,6 +17,8 @@
 #######################################
 
 set ExecutionPath {
+
+  BeamSpotFilter
 
   PileUpMerger
   ParticlePropagator
@@ -4938,6 +4940,102 @@ module StatusPidFilter GenParticleFilter {
 
 }
 
+#######################
+# GenBeamSpotFilter
+# Saves a particle intended to represent the beamspot
+#######################
+
+module BeamSpotFilter BeamSpotFilter {
+    set InputArray Delphes/stableParticles
+    set OutputArray beamSpotParticle
+
+}
+
+########################################
+#   Smear tracks
+########################################
+
+module TrackSmearing TrackSmearing {
+  set InputArray TrackMerger/tracks
+  set BeamSpotInputArray BeamSpotFilter/beamSpotParticle
+  set OutputArray tracks
+  set ApplyToPileUp true
+
+  # from http://mersi.web.cern.ch/mersi/layouts/.private/Baseline_tilted_200_Pixel_1_1_1/index.html
+  source trackResolution.tcl
+}
+
+
+########################################
+#   Time Smearing
+########################################
+
+module TimeSmearing TimeSmearing {
+  set InputArray TrackSmearing/tracks
+  set OutputArray tracks
+
+  # assume 20 ps resolution for now
+  set TimeResolution 20E-12
+}
+
+##################################
+# Primary vertex reconstruction
+##################################
+
+
+module VertexFinderDA4D VertexFinderDA4D {
+  set InputArray TimeSmearing/tracks
+#  set InputArray TrackSmearing/tracks
+#  set InputArray TrackMerger/tracks
+
+  set OutputArray tracks
+  set VertexOutputArray vertices
+
+  set Verbose 0
+  set MinPT 1.0
+
+  # in mm
+  set VertexSpaceSize 0.5
+
+  # in s
+  set VertexTimeSize 10E-12
+
+  set UseTc 1
+  set BetaMax 0.1
+  set BetaStop 1.0
+  set CoolingFactor 0.8
+  set MaxIterations 100
+
+  # in mm
+  set DzCutOff 40
+  set D0CutOff 30
+
+}
+
+##################################
+# Primary vertex reconstruction
+##################################
+
+
+module VertexFinder VertexFinder {
+
+  set InputArray TrackSmearing/tracks
+#  set InputArray TimeSmearing/tracks
+#  set InputArray TrackMerger/tracks
+
+  set OutputArray tracks
+  set VertexOutputArray vertices
+
+  set MinPT 1.0
+  set MinNDF 4
+  set SeedMinPT 1.0
+
+  set Sigma     3.0
+  set MaxEta    10.0
+  set GrowSeeds 1
+
+}
+
 
 ##################
 # ROOT tree writer
@@ -4947,15 +5045,17 @@ module TreeWriter TreeWriter {
 
   # add Branch InputArray BranchName BranchClass
 
-  # GENERATOR PARTICLES
+  # GENERATOR PARTICLES AND VERTICES
   # add Branch GenParticleFilter/filteredParticles Particle GenParticle
-  add Branch Delphes/allParticles Particle GenParticle
-  
-  # PILE-UP
-  add Branch PileUpMerger/stableParticles Particle GenParticle
+  # add Branch Delphes/allParticles Particle GenParticle
+
+  add Branch PileUpMerger/stableParticles GenParticle GenParticle
   add Branch PileUpMerger/vertices GenVertex Vertex
-  add Branch PileUpMerger/vertices Vertex Vertex
-  
+
+  # RECO VERTEX
+  add Branch VertexFinderDA4D/vertices Vertex4D Vertex
+  add Branch VertexFinder/vertices Vertex Vertex
+
   # TRACKS  
   add Branch TrackMerger/tracks Track Track
 
