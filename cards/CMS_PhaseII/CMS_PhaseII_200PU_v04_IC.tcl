@@ -4947,15 +4947,15 @@ module TreeWriter TreeWriter {
 
   # add Branch InputArray BranchName BranchClass
 
-  # GEN-PARTICLES
+  # GENERATOR PARTICLES
   # add Branch GenParticleFilter/filteredParticles Particle GenParticle
   # add Branch Delphes/allParticles Particle GenParticle
-  
+
   # PILE-UP
   add Branch PileUpMerger/stableParticles Particle GenParticle
-  add Branch PileUpMerger/vertices Vertex Vertex
   add Branch PileUpMerger/vertices GenVertex Vertex
-
+  add Branch PileUpMerger/vertices Vertex Vertex
+  
   # TRACKS  
   add Branch TrackMerger/tracks Track Track
 
