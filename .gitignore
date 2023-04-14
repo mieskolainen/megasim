@@ -1,0 +1,5 @@
+*.root
+*.hepmc
+*.hepmc2
+*.hepmc3
+*.pileup

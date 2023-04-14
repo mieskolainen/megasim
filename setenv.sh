@@ -1,0 +1,13 @@
+# Environment setup
+
+export HEPMC2SYS=$HOME/local/HEPMC2/HepMC-2.06.11/build
+#export RIVETSYS=$HOME/local/RIVET
+
+export PATH=${HEPMC2SYS}/bin:${PATH}
+#export PATH=${RIVETSYS}/bin:${PATH}
+
+export LD_LIBRARY_PATH=${HEPMC2SYS}/lib:${LD_LIBRARY_PATH}
+export LD_LIBRARY_PATH=${HEPMC2SYS}/lib64:${LD_LIBRARY_PATH}
+
+#export LD_LIBRARY_PATH=${RIVETSYS}/lib:${LD_LIBRARY_PATH}
+#export LD_LIBRARY_PATH=${RIVETSYS}/lib64:${LD_LIBRARY_PATH}
