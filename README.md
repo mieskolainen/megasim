@@ -40,7 +40,7 @@ make -j4
 make install
 ```
 
-### RIVET
+### Rivet
 (RESERVATION -- not needed) </br>
 https://gitlab.com/hepcedar/rivet/-/blob/release-3-1-x/doc/tutorials/installation.md
 ```
@@ -54,7 +54,7 @@ chmod +x rivet-bootstrap
 INSTALL_PREFIX=$RIVET MAKE="make -j4" ./rivet-bootstrap
 ```
 
-### PYTHIA 8
+### Pythia 8
 ```
 export PYTHIA8=$HOME/local/PYTHIA8
 
@@ -67,7 +67,7 @@ make -j4
 make install
 ```
 
-### DELPHES 3
+### Delphes 3
 ```
 wget http://cp3.irmp.ucl.ac.be/downloads/Delphes-3.5.0.tar.gz
 tar -zxf Delphes-3.5.0.tar.gz
