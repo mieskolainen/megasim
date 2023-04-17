@@ -36,9 +36,9 @@ export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"
 
 ## CVMFS environment at lxplus / lx
 
-(We need C++14 compatible g++, the environment below is tested to work at lx02)
+(We need C++14 compatible g++, the environment below is tested to work at lx02 centos7)
 ```
-source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_98python3 x86_64-centos7-gcc9-opt
+source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_102 x86_64-centos7-gcc11-opt
 ```
 
 ## Installation
