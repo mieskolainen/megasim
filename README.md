@@ -7,7 +7,7 @@ m.mieskolainen@imperial.ac.uk, 2023 </br>
 
 ### Conda environment
 
-(If you like)
+(If you like) 
 ```
 wget https://repo.anaconda.com/archive/Anaconda3-2023.03-Linux-x86_64.sh
 ```
@@ -19,6 +19,7 @@ conda activate megasim
 
 conda install -c anaconda cmake
 conda install -c conda-forge gxx_linux-64==11.1.0
+conda install -c conda-forge gcc_linux-64==11.1.0
 ```
 
 Override system default compiler
@@ -28,9 +29,14 @@ ln -s $CONDA_PREFIX/bin/x86_64-conda-linux-gnu-g++ ~/.local/bin/g++
 export PATH=$HOME/.local/bin:$PATH
 ```
 
+Set the system library path (important for GLIBC)
+```
+export LD_LIBRARY_PATH="$CONDA_PREFIX/lib:$LD_LIBRARY_PATH"
+```
+
 ## CVMFS environment at lxplus / lx
 
-(We need C++14 compatible g++, the environment below might work)
+(We need C++14 compatible g++, the environment below is tested to work at lx02)
 ```
 source /cvmfs/sft.cern.ch/lcg/views/setupViews.sh LCG_98python3 x86_64-centos7-gcc9-opt
 ```
@@ -58,8 +64,7 @@ cd HepMC-2.06.11
 
 export HEPMC2=$HOME/local/HEPMC2
 ./configure --with-momentum=GEV --with-length=MM --prefix=$HEPMC2/HepMC-2.06.11/build
-make -j8
-make install
+make -j8 && make install
 cd ..
 ```
 
@@ -86,8 +91,7 @@ cd
 
 export PYTHIA8=$HOME/local/PYTHIA8
 ./configure --with-hepmc2=$HEPMC2/HepMC-2.06.11/build --prefix=$PYTHIA8/Pythia-8.3.09/build
-make -j8
-make install
+make -j8 && make install
 cd ..
 ```
 

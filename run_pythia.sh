@@ -6,8 +6,11 @@
 
 source setenv.sh
 
-mkdir output
+mkdir output -p
 cd src
+
+# Make sure we point to the right Pythia 8 version (not some system default)
+export PYTHIA8DATA="../pythia8309/share/Pythia8/xmldoc"
 
 # Compile
 source compile.sh
