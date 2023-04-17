@@ -5056,6 +5056,8 @@ module TreeWriter TreeWriter {
   # add Branch Delphes/allParticles GenParticle GenParticle
   
   add Branch ParticlePropagator/stableParticles GenParticle GenParticle
+
+  add Branch PileUpMerger/stableParticles PUParticle GenParticle
   add Branch PileUpMerger/vertices GenVertex Vertex
   
   # RECO VERTEX
